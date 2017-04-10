@@ -25,5 +25,5 @@ styled-components
 * webpack.config.js
 * .babelrc
 * .eslintrc
-* .flowconfig
+* .flowconfig [config options](https://flow.org/en/docs/config/)
 * .gitignore
