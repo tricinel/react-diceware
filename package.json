@@ -1,0 +1,33 @@
+{
+  "name": "react-diceware",
+  "version": "0.1.0",
+  "description": "A React Diceware password generator",
+  "main": "index.js",
+  "repository": "git@github.com:tricinel/react-diceware.git",
+  "author": "tricinel <bogdan@blazardesign.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "styled-components": "^1.4.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.43.1",
+    "html-webpack-plugin": "^2.28.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
