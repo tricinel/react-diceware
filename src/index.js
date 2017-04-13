@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { render } from "react-dom";
 
-const Hello = () => {
-  return (
-    <h1>Hello</h1>
-  )
-}
+import App from "./components/App";
 
 render(
-  <Hello />, document.getElementById("react-app")
+  <App />, document.getElementById("react-app")
 )
