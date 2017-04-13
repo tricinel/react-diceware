@@ -11,6 +11,10 @@
     "react-dom": "^15.5.3",
     "styled-components": "^1.4.4"
   },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline --content-base dist/"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
