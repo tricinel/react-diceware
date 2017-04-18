@@ -1,3 +1,5 @@
+// @flow
+
 require('normalize.css');
 
 import React, { Component } from "react";

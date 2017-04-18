@@ -1,3 +1,5 @@
+// @flow
+
 import React from "react";
 import styled from "styled-components";
 
@@ -9,7 +11,7 @@ const PasswordContainer = styled.div`
   color: ${generateColor()};
 `;
 
-const Password = ({ count }) => (
+const Password = ({ count }:{count:number}) => (
   <PasswordContainer>{generatePassword(count)}</PasswordContainer>
 );
 
