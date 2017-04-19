@@ -1,9 +1,9 @@
 // @flow
 
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { generatePassword, generateColor } from "../helpers/password";
+import { generatePassword, generateColor } from '../helpers/password';
 
 const PasswordContainer = styled.div`
   font-family: 'Source Code Pro', monospace;
@@ -11,7 +11,7 @@ const PasswordContainer = styled.div`
   color: ${generateColor()};
 `;
 
-const Password = ({ count }:{count:number}) => (
+const Password = ({ count }: { count:number }) => (
   <PasswordContainer>{generatePassword(count)}</PasswordContainer>
 );
 

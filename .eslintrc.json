@@ -4,6 +4,7 @@
     "node": true,
     "jest": true
   },
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "plugins": [
     "import",
@@ -12,5 +13,8 @@
   "preset": [
     "airbnb",
     "react"
-  ]
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"]
+  }
 }
