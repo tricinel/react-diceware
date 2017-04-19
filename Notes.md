@@ -27,3 +27,12 @@ styled-components
 * .eslintrc
 * .flowconfig [config options](https://flow.org/en/docs/config/)
 * .gitignore
+
+### Timetable
+
+#### 19.05.2017
+
+* install jest, enzyme
+* write jest tests for helpers
+* write enzyme tests for password component?
+* look at jest importing arrow functions with no return

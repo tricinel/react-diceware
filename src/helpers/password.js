@@ -3,13 +3,16 @@
 import words from "../dictionary.js";
 
 // Figure out a better way to generate truly random numbers
-const getRandomNumber = (min: number, max: number): number => Math.floor(Math.random() * (max - min)) + min;
+const getRandomNumber = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
 const generatePassword = (count: number): string => {
   let pass = '';
   // Is there a better way to do this?
   for (let i=0; i<count; i++) {
-    pass += ' ' + words[getRandomNumber(0, words.length)];
+    let word = words[getRandomNumber(0, words.length)];
+    pass += i === 0 ? word : ' ' + word;
   }
 
   return pass;
@@ -21,4 +24,4 @@ const generateColor = (): string => {
   return colors[getRandomNumber(0, colors.length)];
 };
 
-export { generatePassword, generateColor };
+export { getRandomNumber, generatePassword, generateColor };
