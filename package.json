@@ -17,7 +17,8 @@
     "start": "webpack-dev-server --hot --inline --content-base dist/",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "flow": "flow"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
