@@ -3,9 +3,7 @@
 import words from "../dictionary.js";
 
 // Figure out a better way to generate truly random numbers
-const getRandomNumber = (min: number, max: number): number => {
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+const getRandomNumber = (min: number, max: number): number => Math.floor(Math.random() * (max - min)) + min;
 
 const generatePassword = (count: number): string => {
   let pass = '';

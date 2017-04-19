@@ -1,12 +1,12 @@
-const R = require('ramda');
-
 import { getRandomNumber, generatePassword } from '../../src/helpers/password';
+
+const R = require('ramda');
 
 // Get rid of this and refactor
 const repeat = (fn, arg1, arg2, count) => {
-  let arr = [];
+  const arr = [];
 
-  for(let i=0; i<count; i++) {
+  for (let i = 0; i < count; i += 1) {
     arr.push(fn(arg1, arg2));
   }
 
@@ -14,7 +14,6 @@ const repeat = (fn, arg1, arg2, count) => {
 };
 
 test('Generates a random number between two numbers', () => {
-
   // generates a number that is lower than max and higher than min
   expect(getRandomNumber(1, 5)).toBeGreaterThanOrEqual(1);
   expect(getRandomNumber(1, 5)).toBeLessThanOrEqual(5);
@@ -26,7 +25,6 @@ test('Generates a random number between two numbers', () => {
   // for a maximum of 100, at least 50 numbers should be different
   const arr2 = repeat(getRandomNumber, 1, 100, 100);
   expect(R.uniq(arr2).length).toBeGreaterThan(49);
-
 });
 
 test('Generate a random password', () => {
