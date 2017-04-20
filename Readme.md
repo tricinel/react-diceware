@@ -35,6 +35,6 @@ flow-typed install
 * `yarn start` will start webpack-dev-server
 * `yarn build` will build in the `dist` folder
 * `yarn test` runs your tests using `jest`
-* `yarn test:watch` will watch the files for changes and run the tests
+* `yarn run test:watch` will watch the files for changes and run the tests
 * `yarn run lint` will run eslint on your files
 * `yarn run flow` will check for flow type errors
