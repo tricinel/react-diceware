@@ -3,7 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { generatePassword, generateColor } from '../helpers/password';
+import { generateColor } from '../helpers/password';
+import getPassword from '../helpers/password-generator'
 
 const PasswordContainer = styled.div`
   font-family: 'Source Code Pro', monospace;
@@ -12,7 +13,7 @@ const PasswordContainer = styled.div`
 `;
 
 const Password = ({ count }: { count:number }) => (
-  <PasswordContainer>{generatePassword(count)}</PasswordContainer>
+  <PasswordContainer>{getPassword(count)}</PasswordContainer>
 );
 
 export default Password;
