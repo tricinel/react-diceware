@@ -1,18 +1,5 @@
 import wordList from './word-list';
-
-const getRandomNum = (max) => {
-  let randomNum;
-  const array = new Uint32Array(1);
-  const Crypto = window.crypto || window.msCrypto;
-  if (Crypto !== undefined) {
-    Crypto.getRandomValues(array);
-    randomNum = array[0] % max;
-  } else {
-    // instead of error, introduce fallback using Math.random
-    throw new Error('Crypto method not available');
-  }
-  return randomNum + 1;
-};
+import { getRandomNum } from './number-generator';
 
 const rollDice = (count) => {
   const diceRolls = [];
