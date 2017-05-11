@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import generateColor from '../helpers/color-generator';
+import getPassword from '../helpers/password-generator';
+
 import Password from './Password';
 
 const Title = styled.h1`
@@ -16,12 +19,49 @@ const Wrapper = styled.section`
   width: 100%;
 `;
 
-const App = () => (
-  <Wrapper>
-    <Title>Your diceware password is</Title>
+const Button = styled.button`
+  background-color: ${props => props.color};
+  border: 1px solid ${props => props.color};
+  color: #fff;
+  margin: 20px 0;
+  padding: 5px 25px;
+`;
 
-    <Password count="10" />
-  </Wrapper>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      color: generateColor(),
+      password: getPassword(10)
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      color: generateColor(),
+      password: getPassword(10)
+    });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Title>Your diceware password is</Title>
+
+        <Password password={this.state.password} color={this.state.color} />
+
+        <Button
+          onClick={this.handleClick}
+          color={this.state.color}
+        >
+            Generate new password
+        </Button>
+      </Wrapper>
+    );
+  }
+}
 
 export default App;
