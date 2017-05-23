@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import generateColor from '../helpers/color-generator';
 import getPassword from '../helpers/password-generator';
 import Footer from './Footer';
+import PasswordStrengthIndicator from './PasswordStrengthIndicator';
 
 import Password from './Password';
 
@@ -53,6 +54,8 @@ class App extends React.Component {
         <Title>Your diceware password is</Title>
 
         <Password password={this.state.password} color={this.state.color} />
+
+        <PasswordStrengthIndicator password={10} />
 
         <Button onClick={this.handleClick} color={this.state.color}>
           Generate new password
