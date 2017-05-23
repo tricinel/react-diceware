@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import generateColor from '../helpers/color-generator';
 import getPassword from '../helpers/password-generator';
+import Footer from './Footer';
 
 import Password from './Password';
 
@@ -53,12 +54,11 @@ class App extends React.Component {
 
         <Password password={this.state.password} color={this.state.color} />
 
-        <Button
-          onClick={this.handleClick}
-          color={this.state.color}
-        >
-            Generate new password
+        <Button onClick={this.handleClick} color={this.state.color}>
+          Generate new password
         </Button>
+
+        <Footer />
       </Wrapper>
     );
   }
