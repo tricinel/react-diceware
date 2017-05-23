@@ -3,16 +3,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { generatePassword, generateColor } from '../helpers/password';
-
 const PasswordContainer = styled.div`
   font-family: 'Source Code Pro', monospace;
   font-size: 16px;
-  color: ${generateColor()};
+  color: ${props => props.color}
 `;
 
-const Password = ({ count }: { count:number }) => (
-  <PasswordContainer>{generatePassword(count)}</PasswordContainer>
+const Password = ({ password, color }: { password: string, color: string }) => (
+  <PasswordContainer color={color}>{password}</PasswordContainer>
 );
 
 export default Password;
