@@ -5,6 +5,7 @@ import generateColor from '../helpers/color-generator';
 import getPassword from '../helpers/password-generator';
 import Footer from './Footer';
 import PasswordStrengthIndicator from './PasswordStrengthIndicator';
+import PasswordLengthInput from './PasswordLengthInput';
 
 import Password from './Password';
 
@@ -37,16 +38,25 @@ class App extends React.Component {
 
     this.state = {
       color: generateColor(),
+      count: LENGTH,
       password: getPassword(LENGTH)
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handlePasswordLengthChange = this.handlePasswordLengthChange.bind(this);
   }
 
   handleClick() {
     this.setState({
       color: generateColor(),
-      password: getPassword(LENGTH)
+      password: getPassword(this.state.count)
+    });
+  }
+
+  handlePasswordLengthChange(event) {
+    this.setState({
+      count: +event.target.value,
+      password: getPassword(event.target.value)
     });
   }
 
@@ -57,7 +67,11 @@ class App extends React.Component {
 
         <Password password={this.state.password} color={this.state.color} />
 
-        <PasswordStrengthIndicator count={LENGTH} />
+        <PasswordStrengthIndicator count={this.state.count} />
+        <PasswordLengthInput
+          count={this.state.count}
+          handleChange={this.handlePasswordLengthChange}
+        />
 
         <Button onClick={this.handleClick} color={this.state.color}>
           Generate new password
