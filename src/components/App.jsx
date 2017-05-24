@@ -29,13 +29,15 @@ const Button = styled.button`
   padding: 5px 25px;
 `;
 
+const LENGTH = 10;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       color: generateColor(),
-      password: getPassword(10)
+      password: getPassword(LENGTH)
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -44,7 +46,7 @@ class App extends React.Component {
   handleClick() {
     this.setState({
       color: generateColor(),
-      password: getPassword(10)
+      password: getPassword(LENGTH)
     });
   }
 
@@ -55,7 +57,7 @@ class App extends React.Component {
 
         <Password password={this.state.password} color={this.state.color} />
 
-        <PasswordStrengthIndicator password={10} />
+        <PasswordStrengthIndicator count={LENGTH} />
 
         <Button onClick={this.handleClick} color={this.state.color}>
           Generate new password
