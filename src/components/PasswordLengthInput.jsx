@@ -1,10 +1,11 @@
 // @flow
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import Paragraph from './common/ParagraphStyledComponent';
 
-const PasswordLengthInput = ({ count, handleChange }) => (
+const PasswordLengthInput = ({ count, handleChange }: { count: number, handleChange: Function }) => (
   <Paragraph>
     Make it stronger
     <br />

@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const PasswordContainer = styled.div`
@@ -12,5 +13,10 @@ const PasswordContainer = styled.div`
 const Password = ({ password, color }: { password: string, color: string }) => (
   <PasswordContainer color={color}>{password}</PasswordContainer>
 );
+
+Password.propTypes = {
+  password: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
+};
 
 export default Password;

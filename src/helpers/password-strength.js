@@ -1,4 +1,6 @@
-const getStrength = (count) => {
+// @flow
+
+const getStrength = (count: number): Object => {
   if (count < 4) {
     return {
       width: 33,

@@ -1,7 +1,9 @@
+// @flow
+
 import wordList from './word-list';
 import { getRandomNum } from './number-generator';
 
-const rollDice = (count) => {
+const rollDice = (count: number): string => {
   const diceRolls = [];
   for (let i = 1; i <= count; i += 1) {
     diceRolls.push(getRandomNum(6));
@@ -9,7 +11,7 @@ const rollDice = (count) => {
   return diceRolls.join('');
 };
 
-const getPassword = (count) => {
+const getPassword = (count: number): string => {
   const words = [];
   for (let i = 0; i < count; i += 1) {
     words.push(
