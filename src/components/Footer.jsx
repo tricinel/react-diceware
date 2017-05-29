@@ -1,30 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const FooterTitle = styled.h2`
-  font-family: 'Lato', sans-serif;
+import Heading from './common/HeadingStyledComponent';
+import Paragraph from './common/ParagraphStyledComponent';
+
+const FooterTitle = Heading.withComponent('h2').extend`
   font-size: 20px;
-  color: #444;
 `;
 
-const FooterParagraph = styled.p`
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  color: #444;
-`;
-
-const FooterLink = styled.a`
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
+const FooterLink = Paragraph.withComponent('a').extend`
+  color: #03A9F4;
 `;
 
 const Footer = () => (
   <div>
     <FooterTitle>What is Diceware</FooterTitle>
-    <FooterParagraph>
+    <Paragraph>
       Diceware is a method to build long, strong, memorable
       passwords using strings of words from the dictionary.
-    </FooterParagraph>
+    </Paragraph>
     <FooterLink href="http://world.std.com/~reinhold/diceware.html">
       Find out more
     </FooterLink>

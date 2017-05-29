@@ -1,18 +1,15 @@
-import React, { PropTypes } from 'react';
-import styled from 'styled-components';
+// @flow
 
-const Paragraph = styled.p`
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  color: #444;
-`;
+import React, { PropTypes } from 'react';
+
+import Paragraph from './common/ParagraphStyledComponent';
 
 const PasswordLengthInput = ({ count, handleChange }) => (
   <Paragraph>
     Make it stronger
-    <br/>
+    <br />
     <input type="range" min="0" max="20" value={count} onChange={handleChange} />
-    <br/>
+    <br />
     <span>Your password is currently {count} words long.</span>
   </Paragraph>
 );

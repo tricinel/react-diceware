@@ -7,13 +7,9 @@ import Footer from './Footer';
 import PasswordStrengthIndicator from './PasswordStrengthIndicator';
 import PasswordLengthInput from './PasswordLengthInput';
 
-import Password from './Password';
+import Heading from './common/HeadingStyledComponent';
 
-const Title = styled.h1`
-  font-family: 'Lato', sans-serif;
-  font-size: 24px;
-  color: #444;
-`;
+import Password from './Password';
 
 const Wrapper = styled.section`
   margin: 20px auto;
@@ -30,16 +26,14 @@ const Button = styled.button`
   padding: 5px 25px;
 `;
 
-const LENGTH = 10;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       color: generateColor(),
-      count: LENGTH,
-      password: getPassword(LENGTH)
+      count: 10,
+      password: getPassword(10)
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -63,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Title>Your diceware password is</Title>
+        <Heading>Your diceware password is</Heading>
 
         <Password password={this.state.password} color={this.state.color} />
 
