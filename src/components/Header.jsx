@@ -10,34 +10,64 @@ const Title = Heading.extend`
   font-family: 'Source Code Pro', sans-serif;
   font-size: 36px;
   margin: 0 auto;
-  padding: 70px 0;
+  padding: 70px 0 30px 0;
+  position: relative;
   text-align: center;
   width: 200px;
 `;
 
 const Wrapper = styled.div`
-  background-color: #0C5999;
+  position: relative;
   height: 300px;
   margin-bottom: 50px;
-  position: relative;
 `;
 
-const Overlap = styled.svg`
+const Skew = styled.svg`
+  background-color: #0C5999;
   bottom: 0;
-  height: 10vw;
+  height: 100%;
   left: 0;
   position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: top left;
+  transform: skewY(-6deg);
   width: 100%;
 `;
 
-const Header = () => (
+const Button = styled.button`
+  background-color: ${props => props.color};
+  border-radius: 50%;
+  border: 1px solid ${props => props.color};
+  box-shadow: 0px 0px 10px 1px rgba(50, 50, 50, 0.45);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  height: 100px;
+  line-height: 90px;
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
+
+  :focus {
+    outline: none;
+  }
+`;
+
+const Header = ({ handleClick, color }: { handleClick: Function, color: string }) => (
   <Wrapper>
+    <Skew />
+
     <Title>
       React Diceware
     </Title>
-    <Overlap viewBox="0 0 50 100" preserveAspectRatio="none">
-      <polygon fill="white" points="0,100 100,0 50,100" />
-    </Overlap>
+
+    <Button onClick={handleClick} color={color}>
+      +
+    </Button>
   </Wrapper>
 );
 

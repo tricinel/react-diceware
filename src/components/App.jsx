@@ -19,14 +19,6 @@ const Wrapper = styled.section`
   width: 100%;
 `;
 
-const Button = styled.button`
-  background-color: ${props => props.color};
-  border: 1px solid ${props => props.color};
-  color: #fff;
-  margin: 20px 0;
-  padding: 5px 25px;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -58,7 +50,7 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Header />
+        <Header handleClick={this.handleClick} color={this.state.color} />
         <Heading>Your diceware password is</Heading>
 
         <Password password={this.state.password} color={this.state.color} />
@@ -68,10 +60,6 @@ class App extends React.Component {
           count={this.state.count}
           handleChange={this.handlePasswordLengthChange}
         />
-
-        <Button onClick={this.handleClick} color={this.state.color}>
-          Generate new password
-        </Button>
 
         <Footer />
       </Wrapper>
