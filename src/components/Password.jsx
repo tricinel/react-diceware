@@ -43,8 +43,9 @@ class Password extends React.Component {
       <div>
         <CopyToClipboard
           onCopy={this.handleCopy}
-          text={this.props.password}>
-            <PasswordContainer color={this.props.color}>{this.props.password}</PasswordContainer>
+          text={this.props.password}
+        >
+          <PasswordContainer color={this.props.color}>{this.props.password}</PasswordContainer>
         </CopyToClipboard>
         <Info color={this.state.copied ? '#bd081c' : '#aaa'}>
           {this.state.copied ? 'Copied' : 'Tap the password to copy'}
