@@ -8,11 +8,12 @@ import PasswordStrengthIndicator from './PasswordStrengthIndicator';
 import PasswordLengthInput from './PasswordLengthInput';
 
 import Heading from './common/HeadingStyledComponent';
+import Header from './Header';
 
 import Password from './Password';
 
 const Wrapper = styled.section`
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 640px;
   text-align: center;
   width: 100%;
@@ -57,6 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
+        <Header />
         <Heading>Your diceware password is</Heading>
 
         <Password password={this.state.password} color={this.state.color} />
