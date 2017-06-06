@@ -6,7 +6,7 @@ import Paragraph from './common/ParagraphStyledComponent';
 
 const PasswordContainer = Paragraph.extend`
   font-family: 'Source Code Pro', monospace;
-  font-size: 16px;
+  font-size: 20px;
   color: ${props => props.color};
   cursor: pointer;
   margin: 0;
@@ -35,7 +35,7 @@ class Password extends React.Component {
     this.setState({ copied: true });
     setTimeout(() => {
       this.setState({ copied: false });
-    }, 3000);
+    }, 2000);
   }
 
   render() {
